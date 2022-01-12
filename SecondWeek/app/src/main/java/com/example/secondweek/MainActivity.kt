@@ -19,29 +19,33 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-            //байндинг для materialView
+        //байндинг для materialView
         binding?.buttonMovie?.setOnClickListener(this)
-            //^
+        //^
 
-        supportFragmentManager.beginTransaction().replace(R.id.content, Home()).commit()
+//  Для показа иконки нажимаемого меню в Bottom navigation menu
+//        supportFragmentManager.beginTransaction().replace(R.id.content, Home()).commit()
+//
+//        binding?.bottomNav?.setOnNavigationItemSelectedListener { item ->
+//
+//            when(item.itemId) {
+//                R.id.homeItemBottomNav -> supportFragmentManager.beginTransaction().replace(R.id.content, Home()).commit()
+//                R.id.shopItemBottomNav -> supportFragmentManager.beginTransaction().replace(R.id.content, Shop()).commit()
+//                R.id.deliveryItemBottomNav -> supportFragmentManager.beginTransaction().replace(R.id.content, Delivery()).commit()
+//                R.id.accountItemBottomNav -> supportFragmentManager.beginTransaction().replace(R.id.content, Account()).commit()
+//            }
+//
+//            return@setOnNavigationItemSelectedListener true
+//
+//
+//        }
+//        binding?.bottomNav?.selectedItemId = R.id.homeItemBottomNav
+//    //^
 
-        binding?.bottomNav?.setOnNavigationItemSelectedListener { item ->
-
-            when(item.itemId) {
-                R.id.homeItemBottomNav -> supportFragmentManager.beginTransaction().replace(R.id.content, Home()).commit()
-                R.id.shopItemBottomNav -> supportFragmentManager.beginTransaction().replace(R.id.content, Shop()).commit()
-                R.id.deliveryItemBottomNav -> supportFragmentManager.beginTransaction().replace(R.id.content, Delivery()).commit()
-                R.id.accountItemBottomNav -> supportFragmentManager.beginTransaction().replace(R.id.content, Account()).commit()
-            }
-
-            return@setOnNavigationItemSelectedListener true
-
-
-        }
-        binding?.bottomNav?.selectedItemId = R.id.homeItemBottomNav
     }
-    //Для нижнего выезжающего окна с информацией
-    override fun onClick(view: View) {
+        //Для нижнего выезжающего окна с информацией
+
+        override fun onClick(view: View) {
 
         val details = Details()
 

@@ -10,9 +10,10 @@
     <string name="hide">H I D E</string>
     <string name="fab">FAB</string>
     <string name="play">PLAY</string>
-    <string name="finch">FINCH</string>
+    <string name="finch">FINCH 🤖 </string>
     <string name="actors">Tom Hanks, Robot "Finch"</string>
     <string name="longMovies">145min</string>
+    <string name="watch">WATCH</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
