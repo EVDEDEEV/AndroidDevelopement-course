@@ -6,6 +6,14 @@
     <string name="account">ACCOUNT</string>
     <string name="favorites">FAVORITES</string>
     <string name="settings">SETTINGS</string>
+    <string name="display">K H O P K A</string>
+    <string name="hide">H I D E</string>
+    <string name="fab">FAB</string>
+    <string name="play">PLAY</string>
+    <string name="finch">FINCH</string>
+    <string name="actors">Tom Hanks, Robot "Finch"</string>
+    <string name="longMovies">145min</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

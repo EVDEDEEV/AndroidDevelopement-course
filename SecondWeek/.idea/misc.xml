@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/account.xml" value="0.20277777777777778" />
+        <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/close.xml" value="0.1" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/delivery.xml" value="0.20277777777777778" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/favorites.xml" value="0.20277777777777778" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/home.xml" value="0.20277777777777778" />
@@ -14,7 +15,9 @@
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/account.xml" value="0.24189463019250254" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/activity_main.xml" value="0.24189463019250254" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/delivery.xml" value="0.24189463019250254" />
+        <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/details.xml" value="0.22135416666666666" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/favorites.xml" value="0.24189463019250254" />
+        <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/floating_button.xml" value="0.18432971014492755" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/home.xml" value="0.24189463019250254" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/settings.xml" value="0.24189463019250254" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/shop.xml" value="0.24189463019250254" />
