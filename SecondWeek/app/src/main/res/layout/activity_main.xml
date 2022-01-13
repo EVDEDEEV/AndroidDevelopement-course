@@ -11,6 +11,47 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/sectTopBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="13.1">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.appbar.MaterialToolbar
+                        android:id="@+id/topAppBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@color/black"
+                        app:title="@string/app_name"
+                        app:titleTextColor="@color/white"
+                        app:menu="@menu/top_menu"
+                        app:navigationIcon="@drawable/menu"
+                        style="@style/Widget.MaterialComponents.Toolbar.Primary"/>
+
+                </com.google.android.material.appbar.AppBarLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+                        <FrameLayout
+                            android:id="@+id/content"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
 
 <!--        <FrameLayout-->
 <!--            android:id="@+id/content"-->
@@ -39,7 +80,6 @@
                 app:itemIconTint="@color/color_tab"
                 app:itemTextColor="@color/color_tab"
                 app:menu="@menu/bottom_menu" />
-
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
@@ -74,6 +114,7 @@
                     app:layout_constraintRight_toRightOf="parent"
                     android:layout_marginBottom="5dp"
                     android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
                     android:backgroundTint="@color/play"
                     android:textColor="@color/white"
                     android:text="@string/watch"/>
@@ -122,6 +163,9 @@
         </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
 
 </layout>

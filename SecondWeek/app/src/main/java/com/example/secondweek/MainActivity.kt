@@ -9,8 +9,9 @@ import androidx.databinding.DataBindingUtil
 import com.example.secondweek.*
 import com.example.secondweek.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import  com.google.android.material.navigation.NavigationBarView.OnItemSelectedListener
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity(), View.OnClickListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
     private var binding:ActivityMainBinding? = null
 
@@ -18,10 +19,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
+//байндинг для топ апп бара
+        setSupportActionBar(binding?.topAppBar)
+        //^
         //байндинг для materialView
         binding?.buttonMovie?.setOnClickListener(this)
         //^
+        supportFragmentManager.beginTransaction().replace(R.id.content, Home()).commit()
 
 //  Для показа иконки нажимаемого меню в Bottom navigation menu
 //        supportFragmentManager.beginTransaction().replace(R.id.content, Home()).commit()
@@ -59,9 +63,56 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         details.show(supportFragmentManager, "details")
 
-    }
+
         //^
+
+
+
+    binding?.topAppBar?.setOnMenuItemClickListener { menuItem:MenuItem ->
+
+        when(menuItem.itemId) {
+
+            R.id.favoritesItemTopNav -> {
+                supportFragmentManager.beginTransaction().replace(R.id.content, Favorites()).commit()
+
+                true
+
+            }
+
+            R.id.settingsItemTopNav -> {
+                supportFragmentManager.beginTransaction().replace(R.id.content, Settings()).commit()
+
+                true
+
+            }
+
+            else -> false
+        }
+
+    }
 }
+
+override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+    when(item.itemId) {
+        R.id.homeItemBottomNav -> supportFragmentManager.beginTransaction().replace(R.id.content, Home()).commit()
+        R.id.shopItemBottomNav -> supportFragmentManager.beginTransaction().replace(R.id.content, Shop()).commit()
+        R.id.deliveryItemBottomNav -> supportFragmentManager.beginTransaction().replace(R.id.content, Delivery()).commit()
+        R.id.accountItemBottomNav -> supportFragmentManager.beginTransaction().replace(R.id.content, Account()).commit()
+    }
+
+    return true
+}
+
+override fun onCreateOptionsMenu(menu: Menu): Boolean {
+
+    val menuInflater = menuInflater
+    menuInflater.inflate(R.menu.top_menu, menu)
+
+    return true
+}
+}
+
 
 
 
