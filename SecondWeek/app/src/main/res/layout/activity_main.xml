@@ -32,8 +32,22 @@
                         android:layout_height="?attr/actionBarSize"
                         android:background="@color/black"
                         app:title="@string/app_name"
+                        app:titleMarginStart="@android:dimen/app_icon_size"
                         app:titleTextColor="@color/white"
                         app:menu="@menu/top_menu"
+                        app:navigationIcon="@drawable/menu"
+                        style="@style/Widget.MaterialComponents.Toolbar.Primary"
+
+                        />
+
+                    <com.google.android.material.appbar.MaterialToolbar
+                        android:id="@+id/menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@color/black"
+                        app:title="@string/title"
+                        app:titleTextColor="@color/white"
+                        app:menu="@menu/menu"
                         app:navigationIcon="@drawable/menu"
                         style="@style/Widget.MaterialComponents.Toolbar.Primary"/>
 
@@ -41,11 +55,11 @@
 
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-                        <FrameLayout
-                            android:id="@+id/content"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"/>
+            <FrameLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -117,7 +131,60 @@
                     android:layout_marginEnd="10dp"
                     android:backgroundTint="@color/play"
                     android:textColor="@color/white"
-                    android:text="@string/watch"/>
+                    android:text="@string/info"
+                    android:textSize="11dp"
+                    style="?attr/materialButtonOutlinedStyle"
+                    />
+
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/toggleButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:singleSelection="true">
+
+                    <Button
+                        android:id="@+id/IconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/color_tab"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:icon = "@drawable/settings"
+                        android:textColor="@color/white"
+                        android:text="@string/info"
+                        android:textSize="11dp"
+                        style="@style/Widget.MaterialComponents.Button"
+                        />
+
+
+
+
+                    <Button
+                        android:id="@+id/fullIconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/color_tab"
+                        app:strokeColor = "@color/black"
+                        app:strokeWidth = "2dp"
+                        app:icon = "@drawable/settings"
+                        android:textColor="@color/white"
+                        android:text="@string/info"
+                        android:textSize="11dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        />
+
+
+
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/nameMovie"
@@ -145,22 +212,31 @@
                     android:background="@drawable/background_rounded"
                     android:textColor="@color/white"/>
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/longMovie"
+                <com.google.android.material.checkbox.MaterialCheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:button="@drawable/icon_favorites"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:padding="10dp"
-                    android:text="@string/longMovies"
-                    android:background="@drawable/background_rounded"
-                    android:textColor="@color/white"/>
+                    android:buttonTint="@android:color/white"/>
+
 
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="10dp"
+            android:textColor="@color/white"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

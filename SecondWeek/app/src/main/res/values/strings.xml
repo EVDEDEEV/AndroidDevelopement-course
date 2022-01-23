@@ -14,6 +14,20 @@
     <string name="actors">Tom Hanks, Robot "Finch"</string>
     <string name="longMovies">145min</string>
     <string name="watch">WATCH</string>
+    <string name="version">2.1.1</string>
+    <string name="main">MAIN</string>
+    <string name="video">VIDEO</string>
+    <string name="location">LOCATION</string>
+    <string name="contacts">CONTACTS</string>
+    <string name="help">HELP</string>
+    <string name="developer">DEVELOPER</string>
+    <string name="details">Details</string>
+    <string name="catalog">CATALOG</string>
+    <string name="title">Shop</string>
+    <string name="info">More Info</string>
+    <string name="snackbar">Film about man and his robot</string>
+    <string name="pleasantViewing">ПРИЯТНОГО ПРОСМОТРА</string>
+
 
 
     <!-- TODO: Remove or change this placeholder text -->

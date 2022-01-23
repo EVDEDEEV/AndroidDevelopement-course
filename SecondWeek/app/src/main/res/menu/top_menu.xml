@@ -13,7 +13,31 @@
         android:id="@+id/settingsItemTopNav"
         android:icon="@drawable/settings"
         android:title="@string/settings"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom">
+    <menu>
+
+        <item
+            android:id="@+id/catalogMenu"
+            android:icon="@drawable/catalog"
+            android:title="@string/catalog"
+            app:showAsAction="ifRoom"/>
+
+        <item
+            android:id="@+id/favoritesMenu"
+            android:icon="@drawable/favorites"
+            android:title="@string/favorites"
+            app:showAsAction="ifRoom"/>
+
+        <item
+            android:id="@+id/accountMenu"
+            android:icon="@drawable/account"
+            android:title="@string/account"
+            app:showAsAction="ifRoom"/>
+
+    </menu>
+
+
+        </item>
 
 
 

@@ -7,22 +7,30 @@
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/background_rounded.xml" value="0.24583333333333332" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/close.xml" value="0.1" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/delivery.xml" value="0.20277777777777778" />
+        <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/details.xml" value="0.134375" />
+        <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/developer.xml" value="0.134375" />
+        <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/favorite_active.xml" value="0.22592592592592592" />
+        <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/favorite_passive.xml" value="0.22592592592592592" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/favorites.xml" value="0.20277777777777778" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/home.xml" value="0.20277777777777778" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/ic_launcher_background.xml" value="0.20277777777777778" />
+        <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/icon_favorites.xml" value="0.22592592592592592" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/menu.xml" value="0.20277777777777778" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/settings.xml" value="0.20277777777777778" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/drawable/shop.xml" value="0.20277777777777778" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/account.xml" value="0.24189463019250254" />
-        <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/delivery.xml" value="0.24189463019250254" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/details.xml" value="0.22135416666666666" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/favorites.xml" value="0.24189463019250254" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/floating_button.xml" value="0.18432971014492755" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/home.xml" value="0.24189463019250254" />
+        <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/main_menu_header.xml" value="0.264" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/settings.xml" value="0.24189463019250254" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/layout/shop.xml" value="0.24189463019250254" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/menu/bottom_menu.xml" value="0.26296296296296295" />
+        <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/menu/main_menu.xml" value="0.11822916666666666" />
+        <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/menu/menu.xml" value="0.4" />
         <entry key="..\:/ASProjects/SecondWeek/app/src/main/res/menu/top_menu.xml" value="0.26296296296296295" />
         <entry key="..\:/FirstWeek/SecondWeek/app/src/main/res/drawable/account.xml" value="0.14739583333333334" />
         <entry key="..\:/FirstWeek/SecondWeek/app/src/main/res/drawable/delivery.xml" value="0.14739583333333334" />
