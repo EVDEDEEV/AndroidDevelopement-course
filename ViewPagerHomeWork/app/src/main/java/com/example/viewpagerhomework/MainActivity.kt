@@ -3,6 +3,7 @@ package com.example.viewpagerhomework
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.example.viewpager.MoviesAdapter
 import com.example.viewpagerhomework.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
