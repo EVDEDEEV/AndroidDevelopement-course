@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ThirdWeek</string>
+    <string name="play">PLAY</string>
+    <string name="badBoys">BAD BOYS</string>
+    <string name="messageDialog">ВЫ ХОТИТЕ ПОСМОТРЕТЬ ФИЛЬМ</string>
+    <string name="yes">ДА</string>
+    <string name="no">НЕТ</string>
+    <string name="close">ЗАКРЫТЬ</string>
+    <string name="actionPositive">ПРИЯТНОГО ПРОСМОТРА</string>
+    <string name="actionNeutral">ВЫ НИЧЕГО НЕ ВЫБРАЛИ</string>
+    <string name="actionNegative">ВЫ ОТКАЗАЛИСЬ ОТ ПРОСМОТРА</string>
+    <string name="labelCity">Ваш Город</string>
+    <string name="enterCity">Введите свой город</string>
+    <string name="help">Help</string>
+    <string name="headerSnack">Вы хотите посмотреть список городов?</string>
+    <string name="headerActionSnack">Посмотреть</string>
+    <string name="searchCity">Поиск города</string>
+</resources>

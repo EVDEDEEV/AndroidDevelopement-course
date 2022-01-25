@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        tools:context=".MainActivity">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sectionEnterCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="10dp"
+            app:boxBackgroundColor="@android:color/holo_blue_dark"
+            app:startIconTint="#C5C5C5"
+            app:endIconTint="@android:color/holo_red_light"
+            app:boxStrokeColor="#C5C5C5"
+            android:hint="@string/labelCity"
+            app:hintTextColor="@color/black"
+            app:startIconDrawable="@drawable/location"
+            app:startIconContentDescription="@string/enterCity"
+            app:endIconMode="clear_text"
+            app:boxStrokeWidthFocused="4dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/enterCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@android:color/black"
+                android:textCursorDrawable="@null"
+                app:backgroundTint="@color/white"
+
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/sectionEnterCity"
+            android:layout_margin="10dp"
+            android:textColor="@android:color/white"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
