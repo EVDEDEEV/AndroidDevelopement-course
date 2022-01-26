@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">NestedMyCinema</string>
+    <string name="play">ПОСМОТРЕТЬ</string>
+    <string name="badBoys">ПЛОХИЕ ПАРНИ</string>
+    <string name="avengers">МСТИТЕЛИ</string>
+    <string name="transformers">ТРАНСФОРМЕРЫ</string>
+    <string name="fast">ФОРСАЖ 9</string>
+    <string name="mk">MORTAL KOMBAT</string>
+    <string name="underworld">ДРУГОЙ МИР</string>
+    <string name="pirates">ПИРАТЫ КАРИБСКОГО МОРЯ</string>
+    <string name="future">НАЗАД В БУДУЩЕЕ</string>
+
+
+    <string name="badBoysLong">120 мин.</string>
+    <string name="avengersLong">150 мин.</string>
+    <string name="transformersLong">140 мин.</string>
+    <string name="fastLong">100 мин.</string>
+    <string name="mkLong">90 мин.</string>
+    <string name="underworldLong">98 мин.</string>
+    <string name="piratesLong">110 мин.</string>
+    <string name="futureLong">120 мин.</string>
+
+
+    <string name="badBoysActors">Уилл Смит | Мартин Лоуренс</string>
+    <string name="avengersActors">Крис Эванс</string>
+    <string name="transformersActors">Шайа Лабаф</string>
+    <string name="fastActors">Вин Дизель</string>
+    <string name="mkActors">Льис Тан</string>
+    <string name="underworldActors">Кейт Бекинсейл</string>
+    <string name="piratesActors">Джони Депп</string>
+    <string name="futureActors">Майкл Джей Фокс</string>
+
+
+    <string name="badBoysRating">8</string>
+    <string name="avengersRating">10</string>
+    <string name="transformersRating">9</string>
+    <string name="fastRating">8</string>
+    <string name="mkRating">8</string>
+    <string name="underworldRating">10</string>
+    <string name="piratesRating">10</string>
+    <string name="futureRating">10</string>
+
+    <string name="templateText">TEMPLATE TEXT</string>
+
+
+
+    <string name="longMovie">Длительность:</string>
+    <string name="actorsMovie">Актеры:</string>
+    <string name="ratingMovie">Рейтинг:</string>
+
+
+    <string name="actionMovies">Боевики</string>
+    <string name="fantasticMovies">Фантастика</string>
+    <string name="adventureMovies">Приключение</string>
+    <string name="thrillerMovies">Триллер</string>
+</resources>
