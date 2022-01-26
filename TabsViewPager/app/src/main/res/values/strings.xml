@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ViewPager</string>
+    <string name="play">ПОСМОТРЕТЬ</string>
+    <string name="badBoys">ПЛОХИЕ ПАРНИ</string>
+    <string name="avengers">МСТИТЕЛИ</string>
+    <string name="transformers">ТРАНСФОРМЕРЫ</string>
+    <string name="fast">ФОРСАЖ 9</string>
+
+</resources>
