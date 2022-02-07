@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ASProjects/RoomEducation/app/src/main/res/drawable/catalog_categories.xml" value="0.129" />
         <entry key="..\:/ASProjects/RoomEducation/app/src/main/res/layout/activity_main.xml" value="0.25407608695652173" />
         <entry key="..\:/ASProjects/RoomEducation/app/src/main/res/layout/catalog_categories.xml" value="0.25407608695652173" />
+        <entry key="..\:/ASProjects/RoomEducation/app/src/main/res/layout/panel_edit_product.xml" value="0.25407608695652173" />
       </map>
     </option>
   </component>

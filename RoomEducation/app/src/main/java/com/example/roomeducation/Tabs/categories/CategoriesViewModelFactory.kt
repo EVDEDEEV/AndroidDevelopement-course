@@ -1,8 +1,8 @@
-package com.example.room.Tabs.categories
+package com.example.roomeducation.Tabs.categories
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.room.db.CategoriesRepository
+import com.example.roomeducation.db.CategoriesRepository
 
 
 class CategoriesViewModelFactory (private val categoriesRepository: CategoriesRepository): ViewModelProvider.Factory {

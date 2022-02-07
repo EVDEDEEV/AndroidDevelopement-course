@@ -1,11 +1,12 @@
-package com.example.room.Tabs.categories
+package com.example.roomeducation.Tabs.categories
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
-import com.example.room.db.Categories
-import com.example.room.db.CategoriesRepository
+
+import com.example.roomeducation.db.Categories
+import com.example.roomeducation.db.CategoriesRepository
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 

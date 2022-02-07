@@ -1,4 +1,4 @@
-package com.example.room.Tabs.categories
+package com.example.roomeducation.Tabs.categories
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,16 +10,16 @@ import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.room.Database
-import com.example.room.R
-import com.example.room.databinding.CatalogCategoriesBinding
-import com.example.room.db.Categories
-import com.example.room.db.CategoriesRepository
+import com.example.roomeducation.R
+import com.example.roomeducation.databinding.CatalogCategoriesBinding
+import com.example.roomeducation.db.Categories
+import com.example.roomeducation.db.CategoriesRepository
+import com.example.roomeducation.db.Database
 
 
 class CatalogCategories : Fragment(),View.OnClickListener {
 
-    private var binding:CatalogCategoriesBinding? = null
+    private var binding: CatalogCategoriesBinding? = null
     private var categoriesRepository: CategoriesRepository? = null
     private var categoriesViewModel: CategoriesViewModel? = null
     private var categoriesViewModelFactory: CategoriesViewModelFactory? = null
@@ -48,7 +48,7 @@ class CatalogCategories : Fragment(),View.OnClickListener {
 
     private fun initRecyclerCategories(){
         binding?.recyclerCategories?.layoutManager = LinearLayoutManager(context)
-        categoriesAdapter = CategoriesAdapter({categories:Categories->deleteCategory(categories)},
+        categoriesAdapter = CategoriesAdapter({categories: Categories ->deleteCategory(categories)},
             {categories:Categories->editCategory(categories)})
         binding?.recyclerCategories?.adapter = categoriesAdapter
 

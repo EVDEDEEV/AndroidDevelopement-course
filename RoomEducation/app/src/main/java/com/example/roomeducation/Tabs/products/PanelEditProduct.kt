@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.roomeducation.R
+import com.example.roomeducation.databinding.PanelEditProductBinding
 import com.example.roomeducation.db.Database
 import com.example.roomeducation.db.ProductsRepository
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment

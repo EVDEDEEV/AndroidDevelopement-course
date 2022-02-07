@@ -1,13 +1,14 @@
-package com.example.room.Tabs.categories
+package com.example.roomeducation.Tabs.categories
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.room.R
-import com.example.room.databinding.CategoryItemBinding
-import com.example.room.db.Categories
+
+import com.example.roomeducation.R
+import com.example.roomeducation.databinding.CategoryItemBinding
+import com.example.roomeducation.db.Categories
 
 class CategoriesAdapter(private val deleteCategory:(Categories)->Unit,
                         private val editCategory:(Categories)->Unit): RecyclerView.Adapter<CategoriesAdapter.CategoriesHolder>() {

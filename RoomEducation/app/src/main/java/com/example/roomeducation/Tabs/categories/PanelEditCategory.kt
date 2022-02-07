@@ -1,4 +1,4 @@
-package com.example.room.Tabs.categories
+package com.example.roomeducation.Tabs.categories
 
 import android.os.Bundle
 import android.view.KeyEvent
@@ -8,10 +8,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
-import com.example.room.Database
-import com.example.room.R
-import com.example.room.databinding.PanelEditCategoryBinding
-import com.example.room.db.CategoriesRepository
+
+import com.example.roomeducation.R
+import com.example.roomeducation.databinding.PanelEditCategoryBinding
+import com.example.roomeducation.db.CategoriesRepository
+import com.example.roomeducation.db.Database
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 
