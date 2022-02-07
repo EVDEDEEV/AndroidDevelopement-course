@@ -10,7 +10,7 @@ import com.example.roomeducation.db.CategoriesRepository
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class  CategoriesViewModel(private val categoriesRepository: CategoriesRepository) : ViewModel() {
+class   CategoriesViewModel(private val categoriesRepository: CategoriesRepository) : ViewModel() {
 
     val categories = categoriesRepository.categories
 
