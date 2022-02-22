@@ -3,7 +3,7 @@ package my.project.roomrecyclerview.data
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import my.project.roomrecyclerview.models.CategoryModel
-import my.project.roomrecyclerview.tabs.TabCategories
+
 
 @Dao
 interface CategoryDao {
