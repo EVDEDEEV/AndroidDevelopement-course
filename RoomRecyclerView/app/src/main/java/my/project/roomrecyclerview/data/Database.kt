@@ -3,13 +3,14 @@ package my.project.roomrecyclerview.data
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
+import androidx.room.RoomDatabase
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.internal.synchronized
 import my.project.roomrecyclerview.models.CategoryModel
 import my.project.roomrecyclerview.models.ProductModel
 
 @Database(entities = [CategoryModel::class, ProductModel::class], version = 1)
-abstract class Database {
+abstract class Database:RoomDatabase(){
     //Создаем переменные, которые наследуют интерфейсы управления БД
     abstract val productDao: ProductDao
     abstract val categoryDao: CategoryDao
@@ -27,8 +28,7 @@ abstract class Database {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         my.project.roomrecyclerview.data.Database::class.java,
-
-                    ).build()
+                        "databse").build()
                 }
                 return instance
             }
