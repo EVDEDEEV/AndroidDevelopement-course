@@ -18,9 +18,10 @@ class CategoryRepository(private val categoryDao: CategoryDao) {
         categoryDao.deleteCategory(categoryModel)
     }
 
-    suspend fun deleteAllCategories(categoryModel: CategoryModel) {
+    suspend fun deleteAllCategories() {
         categoryDao.deleteAllCategories()
     }
+
 
 
 

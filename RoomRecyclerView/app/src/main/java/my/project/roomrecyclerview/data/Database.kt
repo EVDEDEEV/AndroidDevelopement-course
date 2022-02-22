@@ -28,7 +28,7 @@ abstract class Database:RoomDatabase(){
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         my.project.roomrecyclerview.data.Database::class.java,
-                        "databse").build()
+                        "database").build()
                 }
                 return instance
             }
