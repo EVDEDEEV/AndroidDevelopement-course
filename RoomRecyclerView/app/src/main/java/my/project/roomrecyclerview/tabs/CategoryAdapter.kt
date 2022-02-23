@@ -44,6 +44,7 @@ class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.CategoryHolder>() {
             binding.idCategory.text = categories.id.toString()
             binding.nameCategory.text = categories.name
 
+
         }
     }
 
