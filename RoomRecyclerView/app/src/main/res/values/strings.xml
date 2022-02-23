@@ -23,6 +23,7 @@
 
     <string name="shoes">ОБУВЬ</string>
     <string name="accessories">АКСЕССУАРЫ</string>
+    <string name="hello_blank_fragment">Hello World</string>
 
 
 </resources>
