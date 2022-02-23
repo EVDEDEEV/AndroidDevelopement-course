@@ -46,6 +46,10 @@ class TabProducts: Fragment() {
         initRecyclerProducts()
         displayProducts()
 
+        binding?.deleteAllProducts?.setOnClickListener(View.OnClickListener {
+            productViewModel?.deleteAllProducts()
+        })
+
         return binding?.root
 
     }
