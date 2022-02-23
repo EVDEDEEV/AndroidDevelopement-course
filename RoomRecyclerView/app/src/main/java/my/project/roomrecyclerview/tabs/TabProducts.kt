@@ -43,21 +43,21 @@ class TabProducts: Fragment() {
         productFactory = ProductFactory(productRepository!!)
         productViewModel = ViewModelProvider(this, productFactory!!).get(ProductViewModel::class.java)
 
-        initRecyclerCategories()
-        displayCategories()
+        initRecyclerProducts()
+        displayProducts()
 
         return binding?.root
 
     }
 
-    private fun initRecyclerCategories() {
+    private fun initRecyclerProducts() {
         binding?.recyclerProducts?.layoutManager = LinearLayoutManager(context)
         productAdapter = ProductAdapter()
         binding?.recyclerProducts?.adapter = productAdapter
 
     }
 
-    private fun displayCategories(){
+    private fun displayProducts(){
         productViewModel?.products?.observe(viewLifecycleOwner, Observer {
             productAdapter?.setList(it)
             productAdapter?.notifyDataSetChanged()
