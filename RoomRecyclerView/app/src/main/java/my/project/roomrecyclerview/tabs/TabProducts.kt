@@ -81,5 +81,7 @@ class TabProducts: Fragment() {
         parameters.putString("categoryProduct", productModel.category)
         parameters.putString("priceProduct", productModel.price)
         panelEditProduct.arguments = parameters
+
+        panelEditProduct.show((context as FragmentActivity).supportFragmentManager, "editProduct")
     }
 }
