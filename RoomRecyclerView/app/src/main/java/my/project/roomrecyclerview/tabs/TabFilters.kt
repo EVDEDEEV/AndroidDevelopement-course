@@ -14,6 +14,7 @@ import my.project.roomrecyclerview.R
 import my.project.roomrecyclerview.data.Database
 import my.project.roomrecyclerview.databinding.TabFiltersBinding
 import my.project.roomrecyclerview.databinding.TabProductsBinding
+import my.project.roomrecyclerview.models.ProductModel
 import my.project.roomrecyclerview.repositories.ProductRepository
 import my.project.roomrecyclerview.viewModels.ProductFactory
 import my.project.roomrecyclerview.viewModels.ProductViewModel
@@ -48,7 +49,8 @@ class TabFilters : Fragment() {
 
     private fun initRecyclerFilterProducts() {
         binding?.recyclerFilter?.layoutManager = LinearLayoutManager(context)
-        productAdapter = ProductAdapter()
+        productAdapter = ProductAdapter({productModel: ProductModel -> deleteProduct(productModel) },
+            {productModel: ProductModel -> editProduct(productModel)})
         binding?.recyclerFilter?.adapter = productAdapter
 
         displayFilterProducts()
@@ -60,5 +62,21 @@ class TabFilters : Fragment() {
             productAdapter?.setList(it)
             productAdapter?.notifyDataSetChanged()
         })
+    }
+
+    private fun deleteProduct(productModel:ProductModel) {
+        productViewModel?.deleteProduct(productModel)
+    }
+
+    private fun editProduct(productModel: ProductModel) {
+        val panelEditProduct = PanelEditProduct()
+        val parameters = Bundle()
+        parameters.putString("idProduct", productModel.id.toString())
+        parameters.putString("nameProduct", productModel.name)
+        parameters.putString("categoryProduct", productModel.category)
+        parameters.putString("priceProduct", productModel.price)
+        panelEditProduct.arguments = parameters
+
+        panelEditProduct.show((context as FragmentActivity).supportFragmentManager, "editProduct")
     }
 }
