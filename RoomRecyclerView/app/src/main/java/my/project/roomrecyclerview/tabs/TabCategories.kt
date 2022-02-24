@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import my.project.roomrecyclerview.R
 import my.project.roomrecyclerview.data.Database
 import my.project.roomrecyclerview.databinding.TabCategoriesBinding
+import my.project.roomrecyclerview.models.CategoryModel
 import my.project.roomrecyclerview.repositories.CategoryRepository
 import my.project.roomrecyclerview.viewModels.CategoryFactory
 import my.project.roomrecyclerview.viewModels.CategoryViewModel
@@ -61,5 +62,21 @@ class TabCategories : Fragment() {
             categoryAdapter?.setList(it)
             categoryAdapter?.notifyDataSetChanged()
         })
+    }
+
+
+    private fun deleteCategory(categoryModel: CategoryModel) {
+        categoryViewModel?.delete(categoryModel)
+
+    }
+
+    private fun editCategory(categoryModel: CategoryModel) {
+        val panelCategory = PanelEditCategory()
+        val parameters = Bundle()
+        parameters.putString("idCategory", categoryModel.id.toString())
+        parameters.putString("nameCategory", categoryModel.name)
+        panelCategory.arguments = parameters
+
+        panelCategory.show((context as FragmentActivity).supportFragmentManager,"editCategory")
     }
 }
