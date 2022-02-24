@@ -52,7 +52,8 @@ class TabCategories : Fragment() {
 
     private fun initRecyclerCategories() {
         binding?.recyclerCategories?.layoutManager = LinearLayoutManager(context)
-        categoryAdapter = CategoryAdapter()
+        categoryAdapter = CategoryAdapter({categoryModel: CategoryModel -> deleteCategory(categoryModel) },
+            {categoryModel: CategoryModel -> editCategory(categoryModel)})
         binding?.recyclerCategories?.adapter = categoryAdapter
 
     }

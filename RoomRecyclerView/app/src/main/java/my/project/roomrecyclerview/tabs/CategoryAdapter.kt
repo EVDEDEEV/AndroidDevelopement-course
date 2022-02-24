@@ -1,6 +1,7 @@
 package my.project.roomrecyclerview.tabs
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +11,8 @@ import my.project.roomrecyclerview.models.CategoryModel
 import java.util.*
 import kotlin.collections.ArrayList
 
-class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.CategoryHolder>() {
+class CategoryAdapter(private val deleteCategory:(CategoryModel) -> Unit,
+private val editCategory: (CategoryModel) -> Unit): RecyclerView.Adapter<CategoryAdapter.CategoryHolder>() {
 
     private val categoriesList = ArrayList<CategoryModel>()
 
@@ -25,7 +27,7 @@ class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.CategoryHolder>() {
     }
 
     override fun onBindViewHolder(holder: CategoryHolder, position: Int) {
-        holder.bind(categoriesList[position])
+        holder.bind(categoriesList[position], deleteCategory, editCategory)
     }
 
     fun setList(categories: List<CategoryModel>) {
@@ -37,12 +39,21 @@ class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.CategoryHolder>() {
 
         fun bind(
             categories: CategoryModel,
-//            deleteCategory:(TabCategories) -> Unit,
-//            editCategory:(TabCategories) -> Unit
+            deleteCategory: (CategoryModel) -> Unit,
+            editCategory: (CategoryModel) -> Unit
         ) {
 
             binding.idCategory.text = categories.id.toString()
             binding.nameCategory.text = categories.name
+
+            binding.deleteCategory.setOnClickListener(View.OnClickListener {
+                deleteCategory(categories)
+
+            })
+
+            binding.editCategory.setOnClickListener(View.OnClickListener {
+                editCategory(categories)
+            })
 
 
         }
