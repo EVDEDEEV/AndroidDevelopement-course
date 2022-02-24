@@ -1,6 +1,7 @@
 package my.project.roomrecyclerview.tabs
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +11,8 @@ import my.project.roomrecyclerview.databinding.ProductItemBinding
 import my.project.roomrecyclerview.models.CategoryModel
 import my.project.roomrecyclerview.models.ProductModel
 
-class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ProductHolder>() {
+class ProductAdapter(private val deleteProduct:(ProductModel) -> Unit,
+                      private val editProduct: (ProductModel) -> Unit) : RecyclerView.Adapter<ProductAdapter.ProductHolder>() {
 
     private val productsList = ArrayList<ProductModel>()
 
@@ -26,7 +28,7 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ProductHolder>() {
     }
 
     override fun onBindViewHolder(holder: ProductHolder, position: Int) {
-        holder.bind(productsList[position])
+        holder.bind(productsList[position], deleteProduct, editProduct)
     }
 
     fun setList(products: List<ProductModel>) {
@@ -37,14 +39,24 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ProductHolder>() {
     class  ProductHolder(val binding: ProductItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(
-            products:ProductModel
+            productsModel:ProductModel, deleteProduct: (ProductModel) -> Unit,
+            editProduct: (ProductModel) -> Unit
+
 //
         ) {
 
-            binding.idProduct.text = products.id.toString()
-            binding.nameProduct.text = products.name
-            binding.categoryProduct.text = products.category
-            binding.priceProduct.text = products.price
+            binding.idProduct.text = productsModel.id.toString()
+            binding.nameProduct.text = productsModel.name
+            binding.categoryProduct.text = productsModel.category
+            binding.priceProduct.text = productsModel.price
+
+            binding.editProduct.setOnClickListener(View.OnClickListener {
+                editProduct(productsModel)
+            })
+
+            binding.deleteProduct.setOnClickListener(View.OnClickListener {
+                deleteProduct(productsModel)
+            })
 
 
         }

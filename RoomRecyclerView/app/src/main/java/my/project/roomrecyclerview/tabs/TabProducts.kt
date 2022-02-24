@@ -15,6 +15,7 @@ import my.project.roomrecyclerview.data.Database
 import my.project.roomrecyclerview.data.ProductDao
 import my.project.roomrecyclerview.databinding.TabCategoriesBinding
 import my.project.roomrecyclerview.databinding.TabProductsBinding
+import my.project.roomrecyclerview.models.CategoryModel
 import my.project.roomrecyclerview.models.ProductModel
 import my.project.roomrecyclerview.repositories.CategoryRepository
 import my.project.roomrecyclerview.repositories.ProductRepository
@@ -57,7 +58,8 @@ class TabProducts: Fragment() {
 
     private fun initRecyclerProducts() {
         binding?.recyclerProducts?.layoutManager = LinearLayoutManager(context)
-        productAdapter = ProductAdapter()
+        productAdapter = ProductAdapter({productModel: ProductModel -> deleteProduct(productModel) },
+            {productModel: ProductModel -> editProduct(productModel)})
         binding?.recyclerProducts?.adapter = productAdapter
 
     }
