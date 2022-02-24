@@ -15,6 +15,7 @@ import my.project.roomrecyclerview.data.Database
 import my.project.roomrecyclerview.data.ProductDao
 import my.project.roomrecyclerview.databinding.TabCategoriesBinding
 import my.project.roomrecyclerview.databinding.TabProductsBinding
+import my.project.roomrecyclerview.models.ProductModel
 import my.project.roomrecyclerview.repositories.CategoryRepository
 import my.project.roomrecyclerview.repositories.ProductRepository
 import my.project.roomrecyclerview.viewModels.CategoryFactory
@@ -66,5 +67,19 @@ class TabProducts: Fragment() {
             productAdapter?.setList(it)
             productAdapter?.notifyDataSetChanged()
         })
+    }
+
+    private fun deleteProduct(productModel:ProductModel) {
+        productViewModel?.deleteProduct(productModel)
+    }
+
+    private fun editProduct(productModel: ProductModel) {
+        val panelEditProduct = PanelEditProduct()
+        val parameters = Bundle()
+        parameters.putString("idProduct", productModel.id.toString())
+        parameters.putString("nameProduct", productModel.name)
+        parameters.putString("categoryProduct", productModel.category)
+        parameters.putString("priceProduct", productModel.price)
+        panelEditProduct.arguments = parameters
     }
 }
