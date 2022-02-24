@@ -40,6 +40,11 @@ class TabCategories : Fragment() {
         initRecyclerCategories()
         displayCategories()
 
+//Кнопка для удаления всех категорий
+        binding?.deleteAllCategories?.setOnClickListener(View.OnClickListener {
+            categoryViewModel?.deleteAll()
+        })
+//
         return binding?.root
 
     }
