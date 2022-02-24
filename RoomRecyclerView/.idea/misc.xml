@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/layout/activity_main.xml" value="0.19947916666666668" />
         <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/layout/category_item.xml" value="0.1721014492753623" />
+        <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/layout/panel_edit_category.xml" value="0.23125" />
+        <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/layout/panel_edit_product.xml" value="0.23125" />
         <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/layout/product_item.xml" value="0.25" />
         <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/layout/tab_categories.xml" value="0.264" />
         <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/layout/tab_filters.xml" value="0.1721014492753623" />
