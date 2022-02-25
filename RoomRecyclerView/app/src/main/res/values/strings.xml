@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Room</string>
+    <string name="app_name">RoomRecyclerView</string>
     <string name="panel">ПАНЕЛЬ</string>
     <string name="catalogProducts">ТОВАРЫ</string>
     <string name="catalogClothes">ОДЕЖДА</string>
