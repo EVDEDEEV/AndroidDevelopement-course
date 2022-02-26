@@ -31,8 +31,10 @@
                 app:layout_constraintTop_toBottomOf="@id/headerAddCategory"
                 android:layout_marginTop="20dp"
                 android:text="@string/catalogClothes"
-                android:background="@color/orange"
-                android:textColor="@color/black"/>
+                android:backgroundTint="@color/button_selector"
+                android:textColor="@color/black"
+
+                android:onClick="Lady"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonAddCategoryShoes"
@@ -41,7 +43,7 @@
                 app:layout_constraintTop_toBottomOf="@id/buttonAddCategoryClothes"
                 android:layout_marginTop="10dp"
                 android:text="@string/shoes"
-                android:background="@color/orange"
+                android:backgroundTint="@color/button_selector"
                 android:textColor="@color/black"/>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -51,7 +53,7 @@
                 app:layout_constraintTop_toBottomOf="@id/buttonAddCategoryShoes"
                 android:layout_marginTop="10dp"
                 android:text="@string/accessories"
-                android:background="@color/orange"
+                android:backgroundTint="@color/button_selector"
                 android:textColor="@color/black"/>
 
 
