@@ -2,19 +2,19 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardProduct"
+        android:id="@+id/cardCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/contentCardProduct"
+            android:id="@+id/contentCardCategory"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#E4E4E4">
+            android:background="@color/orange">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/idProduct"
+                android:id="@+id/idCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
@@ -24,49 +24,17 @@
                 android:textColor="@color/black"/>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/nameProduct"
+                android:id="@+id/nameCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@id/idProduct"
+                app:layout_constraintLeft_toRightOf="@id/idCategory"
                 android:layout_margin="10dp"
                 android:textColor="@color/black"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/categoryProduct"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@id/nameProduct"
-                android:layout_margin="10dp"
-                android:textColor="@color/black"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/priceProduct"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@id/categoryProduct"
-                android:layout_margin="10dp"
-                android:textColor="@color/black"/>
-
 
             <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/editProduct"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toLeftOf="@id/deleteProduct"
-                android:layout_margin="10dp"
-                android:backgroundTint="@android:color/transparent"
-                android:src="@drawable/edit_black"/>
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/deleteProduct"
+                android:id="@+id/deleteCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
@@ -75,6 +43,17 @@
                 android:layout_margin="10dp"
                 android:backgroundTint="@android:color/transparent"
                 android:src="@drawable/delete"/>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/editCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/deleteCategory"
+                android:layout_margin="10dp"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/edit_black"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
