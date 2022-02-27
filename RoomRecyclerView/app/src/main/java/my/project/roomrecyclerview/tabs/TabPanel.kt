@@ -45,21 +45,19 @@ class TabPanel : Fragment(), View.OnClickListener, View.OnKeyListener {
             Database.getInstance((context as FragmentActivity).application).categoryDao
         categoryRepository = CategoryRepository(categoryDao)
         categoryFactory = CategoryFactory(categoryRepository!!)
-        categoryViewModel =
-            ViewModelProvider(this, categoryFactory!!).get(CategoryViewModel::class.java)
+        categoryViewModel = ViewModelProvider(this, categoryFactory!!).get(CategoryViewModel::class.java)
 
         val productDao = Database.getInstance((context as FragmentActivity).application).productDao
         productRepository = ProductRepository(productDao)
         productFactory = ProductFactory(productRepository!!)
-        productViewModel =
-            ViewModelProvider(this, productFactory!!).get(ProductViewModel::class.java)
+        productViewModel = ViewModelProvider(this, productFactory!!).get(ProductViewModel::class.java)
 
 
 //Логика для прослушивания кнопок
 //Кнопки для добавления товаров
-        binding?.enterNameProduct?.setOnClickListener(this)
-        binding?.enterCategoryProduct?.setOnClickListener(this)
-        binding?.enterPriceProduct?.setOnClickListener(this)
+        binding?.enterNameProduct?.setOnKeyListener(this)
+        binding?.enterCategoryProduct?.setOnKeyListener(this)
+        binding?.enterPriceProduct?.setOnKeyListener(this)
 
 //Кнопка для добавления продукта
         binding?.buttonAddProduct?.setOnClickListener(this)
@@ -121,7 +119,7 @@ class TabPanel : Fragment(), View.OnClickListener, View.OnKeyListener {
             }
             R.id.buttonAddCategoryAccessories -> {
 
-                categoryViewModel?.startInsert(binding?.buttonAddCategoryShoes?.text?.toString()!!)
+                categoryViewModel?.startInsert(binding?.buttonAddCategoryAccessories?.text?.toString()!!)
             }
 
             R.id.buttonAddProduct -> {
@@ -132,11 +130,7 @@ class TabPanel : Fragment(), View.OnClickListener, View.OnKeyListener {
 
                 clearResEnterProduct()
             }
-
-
         }
-
-
     }
 
     private fun clearResEnterProduct() {

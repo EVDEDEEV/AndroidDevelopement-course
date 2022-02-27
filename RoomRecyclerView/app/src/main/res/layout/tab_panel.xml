@@ -162,21 +162,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/orange"/>
+                    android:textColor="@color/black"/>
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/resEnterCategoryProduct"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/orange"/>
+                    android:textColor="@color/black"/>
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/resEnterPriceProduct"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/orange"/>
+                    android:textColor="@color/black"/>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
