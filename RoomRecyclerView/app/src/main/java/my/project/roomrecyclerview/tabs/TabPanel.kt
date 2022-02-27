@@ -10,9 +10,11 @@ import androidx.databinding.CallbackRegistry
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import my.project.roomrecyclerview.R
 import my.project.roomrecyclerview.data.Database
 import my.project.roomrecyclerview.databinding.TabPanelBinding
+import my.project.roomrecyclerview.models.ProductModel
 import my.project.roomrecyclerview.repositories.CategoryRepository
 import my.project.roomrecyclerview.repositories.ProductRepository
 import my.project.roomrecyclerview.viewModels.CategoryFactory
@@ -51,6 +53,7 @@ class TabPanel : Fragment(), View.OnClickListener, View.OnKeyListener {
         productFactory = ProductFactory(productRepository!!)
         productViewModel =
             ViewModelProvider(this, productFactory!!).get(ProductViewModel::class.java)
+
 
 //Логика для прослушивания кнопок
 //Кнопки для добавления товаров

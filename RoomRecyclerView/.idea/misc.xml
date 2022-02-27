@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/drawable/catalog_categories.xml" value="0.145" />
+        <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/drawable/catalog_clothes.xml" value="0.145" />
+        <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/drawable/catalog_products.xml" value="0.145" />
+        <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/drawable/cursor.xml" value="0.145" />
+        <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/drawable/edit_black.xml" value="0.145" />
+        <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/drawable/edit_white.xml" value="0.145" />
+        <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.145" />
+        <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/drawable/ic_launcher_background.xml" value="0.145" />
+        <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/drawable/kursor.xml" value="0.145" />
+        <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/drawable/price.xml" value="0.145" />
         <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/layout/activity_main.xml" value="0.19947916666666668" />
         <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/layout/category_item.xml" value="0.1721014492753623" />
         <entry key="..\:/ASProjects/RoomRecyclerView/app/src/main/res/layout/panel_edit_category.xml" value="0.23125" />

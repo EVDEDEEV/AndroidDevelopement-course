@@ -20,7 +20,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="20dp"
-                android:textColor="@color/orange"
+                android:textColor="@color/black"
                 android:text="@string/addCategory"/>
 
 
@@ -65,7 +65,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="60dp"
-                android:textColor="@color/orange"
+                android:textColor="@color/black"
                 android:text="@string/addProduct"/>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -76,10 +76,10 @@
                 android:layout_margin="10dp"
                 app:boxBackgroundColor="@android:color/transparent"
                 app:boxStrokeColor="@android:color/white"
-                app:startIconTint="@android:color/white"
+                app:startIconTint="@color/black"
                 app:endIconTint="@android:color/holo_red_light"
                 android:hint="@string/labelEnterNameProduct"
-                app:hintTextColor="@android:color/white"
+                app:hintTextColor="@color/black"
                 app:startIconDrawable="@drawable/catalog_categories"
                 app:endIconMode="clear_text"
                 app:boxStrokeWidthFocused="4dp">
@@ -89,8 +89,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:textColor="@android:color/white"
-                    android:textCursorDrawable="@drawable/cursor"/>
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@drawable/kursor"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -103,10 +103,10 @@
                 android:layout_margin="10dp"
                 app:boxBackgroundColor="@android:color/transparent"
                 app:boxStrokeColor="@android:color/white"
-                app:startIconTint="@android:color/white"
+                app:startIconTint="@color/black"
                 app:endIconTint="@android:color/holo_red_light"
                 android:hint="@string/labelEnterNumberCategory"
-                app:hintTextColor="@android:color/white"
+                app:hintTextColor="@color/black"
                 app:startIconDrawable="@drawable/catalog_products"
                 app:endIconMode="clear_text"
                 app:boxStrokeWidthFocused="4dp">
@@ -116,8 +116,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:textColor="@android:color/white"
-                    android:textCursorDrawable="@drawable/cursor"/>
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@drawable/kursor"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -128,11 +128,11 @@
                 app:layout_constraintTop_toBottomOf="@id/sectionEnterCategoryProduct"
                 android:layout_margin="10dp"
                 app:boxBackgroundColor="@android:color/transparent"
-                app:boxStrokeColor="@android:color/white"
-                app:startIconTint="@android:color/white"
+                app:boxStrokeColor="@color/black"
+                app:startIconTint="@color/black"
                 app:endIconTint="@android:color/holo_red_light"
                 android:hint="@string/labelEnterPriceProduct"
-                app:hintTextColor="@android:color/white"
+                app:hintTextColor="@color/black"
                 app:startIconDrawable="@drawable/price"
                 app:endIconMode="clear_text"
                 app:boxStrokeWidthFocused="4dp">
@@ -142,8 +142,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    android:textColor="@android:color/white"
-                    android:textCursorDrawable="@drawable/cursor"/>
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@drawable/kursor"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -188,7 +188,8 @@
                 app:layout_constraintTop_toBottomOf="@id/sectionResEnterProduct"
                 android:layout_marginTop="20dp"
                 android:text="@string/addProduct"
-                android:background="@color/orange"
+                android:backgroundTint="#FFBF00"
+                android:height="60dp"
                 android:textColor="@color/black"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

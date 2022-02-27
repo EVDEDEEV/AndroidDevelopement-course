@@ -46,7 +46,6 @@ class TabProducts: Fragment() {
         productViewModel = ViewModelProvider(this, productFactory!!).get(ProductViewModel::class.java)
 
         initRecyclerProducts()
-        displayProducts()
 
         binding?.deleteAllProducts?.setOnClickListener(View.OnClickListener {
             productViewModel?.deleteAllProducts()
@@ -62,6 +61,7 @@ class TabProducts: Fragment() {
             {productModel: ProductModel -> editProduct(productModel)})
         binding?.recyclerProducts?.adapter = productAdapter
 
+        displayProducts()
     }
 
     private fun displayProducts(){

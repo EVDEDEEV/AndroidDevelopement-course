@@ -19,7 +19,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="20dp"
                 android:text="@string/deleteAllCategories"
-                android:background="@color/orange"
+                android:background="#FFBF00"
                 android:textColor="@color/black"/>
 
             <androidx.recyclerview.widget.RecyclerView

@@ -41,8 +41,6 @@ class TabFilters : Fragment() {
         productViewModel = ViewModelProvider(this, productFactory!!).get(ProductViewModel::class.java)
         initRecyclerFilterProducts()
 
-
-
         return binding?.root
 
     }

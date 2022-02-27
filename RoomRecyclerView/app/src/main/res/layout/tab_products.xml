@@ -19,7 +19,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="20dp"
             android:text="@string/deleteAllProducts"
-            android:background="@color/orange"
+            android:background="#FFBF00"
             android:textColor="@color/black"/>
 
         <androidx.recyclerview.widget.RecyclerView
