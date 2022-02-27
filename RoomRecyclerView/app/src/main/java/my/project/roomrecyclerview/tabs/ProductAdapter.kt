@@ -19,7 +19,7 @@ class ProductAdapter(private val deleteProduct:(ProductModel) -> Unit,
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding: ProductItemBinding =
-            DataBindingUtil.inflate(layoutInflater, R.layout.category_item, parent, false)
+            DataBindingUtil.inflate(layoutInflater, R.layout.product_item, parent, false)
         return ProductHolder(binding)
     }
 
