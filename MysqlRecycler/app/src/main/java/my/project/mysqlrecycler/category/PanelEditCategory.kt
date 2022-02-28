@@ -1,60 +1,99 @@
 package my.project.mysqlrecycler.category
 
 import android.os.Bundle
+import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentActivity
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import my.project.mysqlrecycler.R
+import my.project.mysqlrecycler.api.ApiClient
+import my.project.mysqlrecycler.databinding.PanelEditCategoryBinding
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Response
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [PanelEditCategory.newInstance] factory method to
- * create an instance of this fragment.
- */
-class PanelEditCategory : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+class PanelEditCategory :  BottomSheetDialogFragment(),View.OnKeyListener {
+
+    private var binding: PanelEditCategoryBinding? = null
+    private var idCategory: Int? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.panel_edit_category, container, false)
+
+        binding = DataBindingUtil.inflate(inflater, R.layout.panel_edit_category, container, false)
+
+        idCategory = arguments?.getString("idCategory")?.toInt()
+        binding?.editCategory?.setText(arguments?.getString("nameCategory").toString())
+
+
+        binding?.editCategory?.setOnKeyListener(this)
+
+        return binding?.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PanelEditCategory.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PanelEditCategory().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onKey(view: View, i: Int, keyEvent: KeyEvent): Boolean {
+        when (view.id) {
+
+
+            R.id.editCategory -> {
+                if (keyEvent.action == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_ENTER) {
+                    updateCategory(binding?.editCategory?.text?.toString()!!)
+
+                    return true
                 }
+
             }
+        }
+
+        return false
     }
+
+    private fun updateCategory(name: String) {
+        val callUpdateCategory = ApiClient.instance?.api?.updateCategory(idCategory.toString().toInt(), name)
+
+        callUpdateCategory?.enqueue(object : retrofit2.Callback<ResponseBody?> {
+            override fun onResponse(call: Call<ResponseBody?>, response: Response<ResponseBody?>) {
+                Toast.makeText(
+                    context,
+                    "КАТЕГОРИЯ ОБНОВЛЕНА",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                loadScreen()
+
+            }
+
+            override fun onFailure(call: Call<ResponseBody?>, t: Throwable) {
+                Toast.makeText(
+                    context,
+                    "ОШИБКА! ВКЛЮЧИТЕ ИНТЕРНЕТ!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        })
+
+    }
+
+    private fun loadScreen() {
+
+        binding?.editCategory?.setText("")
+
+        dismiss()
+
+        (context as FragmentActivity).supportFragmentManager.beginTransaction()
+            .replace(R.id.mycontent, CatalogCategories()).commit()
+
+    }
+
+
 }

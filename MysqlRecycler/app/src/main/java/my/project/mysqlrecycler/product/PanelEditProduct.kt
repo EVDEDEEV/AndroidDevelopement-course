@@ -1,60 +1,137 @@
 package my.project.mysqlrecycler.product
 
 import android.os.Bundle
+import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentActivity
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import my.project.mysqlrecycler.R
+import my.project.mysqlrecycler.api.ApiClient
+import my.project.mysqlrecycler.databinding.PanelEditProductBinding
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Response
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class PanelEditProduct : BottomSheetDialogFragment(),View.OnKeyListener, View.OnClickListener {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [PanelEditProduct.newInstance] factory method to
- * create an instance of this fragment.
- */
-class PanelEditProduct : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var binding: PanelEditProductBinding? = null
+    private var idProduct:Int? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.panel_edit_product, container, false)
+
+        binding = DataBindingUtil.inflate(inflater, R.layout.panel_edit_product, container, false)
+
+        idProduct = arguments?.getString("idProduct")?.toInt()
+        binding?.editNameProduct?.setText(arguments?.getString("nameProduct").toString())
+        binding?.editCategoryProduct?.setText(arguments?.getString("categoryProduct").toString())
+        binding?.editPriceProduct?.setText(arguments?.getString("priceProduct").toString())
+
+        binding?.editNameProduct?.setOnKeyListener(this)
+        binding?.editCategoryProduct?.setOnKeyListener(this)
+        binding?.editPriceProduct?.setOnKeyListener(this)
+
+        binding?.buttonEditProduct?.setOnClickListener(this)
+
+
+        return binding?.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PanelEditProduct.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PanelEditProduct().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onKey(view: View, i: Int, keyEvent: KeyEvent): Boolean {
+        when (view.id) {
+
+
+            R.id.editNameProduct -> {
+                if (keyEvent.action == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_ENTER) {
+
+                    binding?.resEditNameProduct?.text = binding?.editNameProduct?.text
+                    binding?.editNameProduct?.setText("")
+
+                    return true
                 }
+
             }
+
+            R.id.editCategoryProduct -> {
+                if (keyEvent.action == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_ENTER) {
+
+                    binding?.resEditCategoryProduct?.text = binding?.editCategoryProduct?.text
+                    binding?.editCategoryProduct?.setText("")
+
+                    return true
+                }
+
+            }
+
+            R.id.editPriceProduct -> {
+                if (keyEvent.action == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_ENTER) {
+
+                    binding?.resEditPriceProduct?.text = binding?.editPriceProduct?.text
+                    binding?.editPriceProduct?.setText("")
+
+                    return true
+                }
+
+            }
+        }
+
+        return false
     }
+
+    override fun onClick(view: View) {
+
+        updateProduct(binding?.resEditNameProduct?.text?.toString()!!, binding?.resEditCategoryProduct?.text?.toString()!!,
+            binding?.resEditPriceProduct?.text?.toString()!!)
+    }
+
+
+
+
+    private fun updateProduct(name: String, category: String, price: String) {
+        val callUpdateProduct = ApiClient.instance?.api?.updateProduct(idProduct.toString().toInt(), name, category, price)
+
+        callUpdateProduct?.enqueue(object : retrofit2.Callback<ResponseBody?> {
+            override fun onResponse(call: Call<ResponseBody?>, response: Response<ResponseBody?>) {
+                Toast.makeText(
+                    context,
+                    "ТОВАР ОБНОВЛЕН",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                loadScreen()
+
+
+            }
+
+            override fun onFailure(call: Call<ResponseBody?>, t: Throwable) {
+                Toast.makeText(
+                    context,
+                    "ОШИБКА! ВКЛЮЧИТЕ ИНТЕРНЕТ!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+
+        })
+
+
+    }
+
+    private fun loadScreen() {
+
+        dismiss()
+
+        (context as FragmentActivity).supportFragmentManager.beginTransaction()
+            .replace(R.id.mycontent, CatalogProducts()).commit()
+
+    }
+
 }
