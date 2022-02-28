@@ -12,7 +12,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/orange"
+            android:background="#E4E4E4"
             android:paddingBottom="70dp">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -34,10 +34,10 @@
                 android:layout_margin="10dp"
                 app:boxBackgroundColor="@android:color/transparent"
                 app:boxStrokeColor="@android:color/white"
-                app:startIconTint="@android:color/white"
+                app:startIconTint="@color/black"
                 app:endIconTint="@android:color/holo_red_light"
                 android:hint="@string/labelEnterCategory"
-                app:hintTextColor="@android:color/white"
+                app:hintTextColor="@color/black"
                 app:startIconDrawable="@drawable/catalog_categories"
                 app:endIconMode="clear_text"
                 app:boxStrokeWidthFocused="4dp">
@@ -47,7 +47,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/black"
                     android:textCursorDrawable="@drawable/cursor"/>
 
             </com.google.android.material.textfield.TextInputLayout>
