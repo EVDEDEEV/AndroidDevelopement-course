@@ -22,7 +22,7 @@ import retrofit2.Response
 class CatalogCategories : Fragment() {
 
     private var binding: CatalogCategoriesBinding? = null
-    private var categoriesAdapter: CategoriesAdapter? = null
+    private var categoriesAdapter: CategoryAdapter? = null
 
 
     override fun onCreateView(
@@ -61,7 +61,7 @@ class CatalogCategories : Fragment() {
                 binding?.recyclerCategories?.layoutManager = LinearLayoutManager(context)
 
                 categoriesAdapter = loadCategories?.let {
-                    CategoriesAdapter(
+                    CategoryAdapter(
                         it, { idCategory:Int->deleteCategory(idCategory)},
                         {categoriesApiModel:CategoryApiModel->editCategory(categoriesApiModel)})
                 }

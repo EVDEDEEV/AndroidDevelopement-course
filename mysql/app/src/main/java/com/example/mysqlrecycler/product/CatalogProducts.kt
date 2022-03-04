@@ -21,7 +21,7 @@ import retrofit2.Response
 class CatalogProducts : Fragment(),View.OnClickListener {
 
     private var binding: CatalogProductsBinding? = null
-    private var productsAdapter: ProductsAdapter? = null
+    private var productsAdapter: ProductAdapter? = null
 
 
     override fun onCreateView(
@@ -53,7 +53,7 @@ class CatalogProducts : Fragment(),View.OnClickListener {
 
                 binding?.recyclerProducts?.layoutManager = LinearLayoutManager(context)
                 productsAdapter = loadProducts?.let {
-                    ProductsAdapter(
+                    ProductAdapter(
                         it, { idProduct:Int->deleteProduct(idProduct)},
                         {productsApiModel:ProductApiModel->editProduct(productsApiModel)})
                 }

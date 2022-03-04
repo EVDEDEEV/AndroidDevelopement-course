@@ -9,9 +9,9 @@ import com.example.mysqlrecycler.R
 import com.example.mysqlrecycler.api.models.CategoryApiModel
 import com.example.mysqlrecycler.databinding.CategoryItemBinding
 
-class CategoriesAdapter( private val categoriesList: ArrayList<CategoryApiModel>,
+class CategoryAdapter( private val categoriesList: ArrayList<CategoryApiModel>,
                          private val deleteCategory:(Int)->Unit,
-                         private val editCategory:(CategoryApiModel)->Unit): RecyclerView.Adapter<CategoriesAdapter.CategoriesHolder>() {
+                         private val editCategory:(CategoryApiModel)->Unit): RecyclerView.Adapter<CategoryAdapter.CategoriesHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoriesHolder {
         val layoutInflater = LayoutInflater.from(parent.context)

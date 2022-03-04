@@ -10,9 +10,9 @@ import com.example.mysqlrecycler.api.models.ProductApiModel
 import com.example.mysqlrecycler.databinding.ProductItemBinding
 
 
-class ProductsAdapter(private val productsList : ArrayList<ProductApiModel>,
+class ProductAdapter(private val productsList : ArrayList<ProductApiModel>,
                       private val deleteProduct:(Int)->Unit,
-                      private val editProduct:(ProductApiModel)->Unit): RecyclerView.Adapter<ProductsAdapter.ProductsHolder>() {
+                      private val editProduct:(ProductApiModel)->Unit): RecyclerView.Adapter<ProductAdapter.ProductsHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsHolder {
         val layoutInflater = LayoutInflater.from(parent.context)

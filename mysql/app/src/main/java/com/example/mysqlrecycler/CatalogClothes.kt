@@ -13,7 +13,7 @@ import com.example.mysqlrecycler.api.ApiClient
 import com.example.mysqlrecycler.api.models.ProductApiModel
 import com.example.mysqlrecycler.databinding.CatalogClothesBinding
 import com.example.mysqlrecycler.product.PanelEditProduct
-import com.example.mysqlrecycler.product.ProductsAdapter
+import com.example.mysqlrecycler.product.ProductAdapter
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -22,7 +22,7 @@ import retrofit2.Response
 class CatalogClothes : Fragment() {
 
     private var binding: CatalogClothesBinding? = null
-    private var productsAdapter: ProductsAdapter? = null
+    private var productsAdapter: ProductAdapter? = null
 
 
     override fun onCreateView(
@@ -32,45 +32,45 @@ class CatalogClothes : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.catalog_clothes, container, false)
 
-        loadClothes()
+//        loadClothes()
 
         return binding?.root
     }
 
 
-    private fun loadClothes () {
-
-        val callGetClothes = ApiClient.instance?.api?.getProductFilter(getString(R.string.catalogClothes),
-            getString(R.string.priceFilter))
-        callGetClothes?.enqueue(object: Callback<ArrayList<ProductApiModel>> {
-            override fun onResponse(
-                call: Call<ArrayList<ProductApiModel>>,
-                response: Response<ArrayList<ProductApiModel>>
-            ) {
-
-                val loadProducts = response.body()
-
-                binding?.recyclerClothes?.layoutManager = LinearLayoutManager(context)
-                productsAdapter = loadProducts?.let {
-                    ProductsAdapter(
-                        it, { idProduct:Int->deleteProduct(idProduct)},
-                        {productsApiModel:ProductApiModel->editProduct(productsApiModel)})
-                }
-                binding?.recyclerClothes?.adapter = productsAdapter
-
-                Toast.makeText(context, "ЗАГРУЗКА", Toast.LENGTH_SHORT).show()
-
-
-
-            }
-
-            override fun onFailure(call: Call<ArrayList<ProductApiModel>>, t: Throwable) {
-                Toast.makeText(context, "ОШИБКА! ВКЛЮЧИТЕ ИНТЕРНЕТ!", Toast.LENGTH_SHORT).show()
-
-            }
-        })
-
-    }
+//    private fun loadClothes () {
+//
+//        val callGetClothes = ApiClient.instance?.api?.getProductFilter(getString(R.string.catalogClothes),
+//            getString(R.string.priceFilter))
+//        callGetClothes?.enqueue(object: Callback<ArrayList<ProductApiModel>> {
+//            override fun onResponse(
+//                call: Call<ArrayList<ProductApiModel>>,
+//                response: Response<ArrayList<ProductApiModel>>
+//            ) {
+//
+//                val loadProducts = response.body()
+//
+//                binding?.recyclerClothes?.layoutManager = LinearLayoutManager(context)
+//                productsAdapter = loadProducts?.let {
+//                    ProductAdapter(
+//                        it, { idProduct:Int->deleteProduct(idProduct)},
+//                        {productsApiModel:ProductApiModel->editProduct(productsApiModel)})
+//                }
+//                binding?.recyclerClothes?.adapter = productsAdapter
+//
+//                Toast.makeText(context, "ЗАГРУЗКА", Toast.LENGTH_SHORT).show()
+//
+//
+//
+//            }
+//
+//            override fun onFailure(call: Call<ArrayList<ProductApiModel>>, t: Throwable) {
+//                Toast.makeText(context, "ОШИБКА! ВКЛЮЧИТЕ ИНТЕРНЕТ!", Toast.LENGTH_SHORT).show()
+//
+//            }
+//        })
+//
+//    }
 
 
     private fun deleteProduct(id:Int) {
@@ -85,7 +85,7 @@ class CatalogClothes : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
 
-                loadClothes()
+//                loadClothes()
             }
 
 

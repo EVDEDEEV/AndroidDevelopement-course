@@ -22,7 +22,7 @@ import retrofit2.Response
 class CatalogClothes : Fragment() {
 
     private var binding: CatalogClothesBinding? = null
-    private var productsAdapter: ProductAdapter? = null
+    private var productAdapter: ProductAdapter? = null
 
 
     override fun onCreateView(
@@ -51,12 +51,12 @@ class CatalogClothes : Fragment() {
                 val loadProducts = response.body()
 
                 binding?.recyclerClothes?.layoutManager = LinearLayoutManager(context)
-                productsAdapter = loadProducts?.let {
+                productAdapter = loadProducts?.let {
                     ProductAdapter(
                         it, { idProduct:Int->deleteProduct(idProduct)},
                         {productsApiModel:ProductApiModel->editProduct(productsApiModel)})
                 }
-                binding?.recyclerClothes?.adapter = productsAdapter
+                binding?.recyclerClothes?.adapter = productAdapter
 
                 Toast.makeText(context, "ЗАГРУЗКА", Toast.LENGTH_SHORT).show()
 
@@ -103,13 +103,13 @@ class CatalogClothes : Fragment() {
 
     }
 
-    private fun editProduct(productsApiModel: ProductApiModel) {
+    private fun editProduct(productApiModel: ProductApiModel) {
         val panelEditProduct = PanelEditProduct()
         val parameters = Bundle()
-        parameters.putString("idProduct", productsApiModel.id.toString())
-        parameters.putString("nameProduct", productsApiModel.name)
-        parameters.putString("categoryProduct", productsApiModel.category)
-        parameters.putString("priceProduct", productsApiModel.price)
+        parameters.putString("idProduct", productApiModel.id.toString())
+        parameters.putString("nameProduct", productApiModel.name)
+        parameters.putString("categoryProduct", productApiModel.category)
+        parameters.putString("priceProduct", productApiModel.price)
         panelEditProduct.arguments = parameters
 
         panelEditProduct.show((context as FragmentActivity).supportFragmentManager, "editProduct")

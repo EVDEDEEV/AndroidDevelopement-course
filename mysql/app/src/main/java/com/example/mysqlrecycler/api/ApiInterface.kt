@@ -63,8 +63,8 @@ interface ApiInterface {
     @GET("getProduct.php")
     fun getProduct(): Call<ArrayList<ProductApiModel>>
 
-    @GET("getProductFilter.php")
-    fun getProductFilter(@Query("category") category: String, @Query("price") price: String):
-            Call<ArrayList<ProductApiModel>>
+//    @GET("getProductFilter.php")
+//    fun getProductFilter(@Query("category") category: String, @Query("price") price: String):
+//            Call<ArrayList<ProductApiModel>>
 
 }

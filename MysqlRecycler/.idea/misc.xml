@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ASProjects/MysqlRecycler/app/src/main/res/drawable/catalog_categories.xml" value="0.114" />
+        <entry key="..\:/ASProjects/MysqlRecycler/app/src/main/res/drawable/catalog_clothes.xml" value="0.112" />
         <entry key="..\:/ASProjects/MysqlRecycler/app/src/main/res/drawable/cursor.xml" value="0.112" />
         <entry key="..\:/ASProjects/MysqlRecycler/app/src/main/res/drawable/price.xml" value="0.112" />
         <entry key="..\:/ASProjects/MysqlRecycler/app/src/main/res/layout/activity_main.xml" value="0.25" />
