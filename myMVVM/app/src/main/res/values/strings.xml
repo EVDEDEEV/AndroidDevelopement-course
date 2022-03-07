@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">myMVVM</string>
+    <string name="app_name">MVVM</string>
+    <string name="home">HOME</string>
+    <string name="categories">CATEGORIES</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

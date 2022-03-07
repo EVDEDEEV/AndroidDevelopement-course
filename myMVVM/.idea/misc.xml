@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ASProjects/myMVVM/app/src/main/res/drawable/categories.xml" value="0.1065" />
+        <entry key="..\:/ASProjects/myMVVM/app/src/main/res/drawable/home.xml" value="0.1065" />
         <entry key="..\:/ASProjects/myMVVM/app/src/main/res/layout/activity_main.xml" value="0.25052083333333336" />
+        <entry key="..\:/ASProjects/myMVVM/app/src/main/res/menu/bottom_menu.xml" value="0.25052083333333336" />
       </map>
     </option>
   </component>
