@@ -6,13 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import my.project.mymvvm.R
+import my.project.mymvvm.databinding.CategoriesBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class Categories : Fragment() {
 
-    private var binding:CategoriesBinding? = null
+    private var binding: CategoriesBinding? = null
     private var categoryAdapter: CategoryAdapter? = null
     val categoriesViewModel: CategoriesViewModel by viewModel()
 
