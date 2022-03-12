@@ -17,5 +17,5 @@ interface CoffeeDao {
     fun loadCoffee(): LiveData<List<CoffeeModel>>
 
     @Query("DELETE FROM coffee_data_table")
-    suspend fun clear()
+     fun clear()
 }

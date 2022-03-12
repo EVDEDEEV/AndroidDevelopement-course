@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.homeBottomMainMenu -> supportFragmentManager.beginTransaction()
                     .replace(R.id.mainContent, Home()).commit()
                 R.id.coffeeBottomMainMenu -> supportFragmentManager.beginTransaction()
-                    .replace(R.id.mainContent, Cofee()).commit()
+                    .replace(R.id.mainContent, Coffee()).commit()
                 R.id.cardBottomMainMenu -> supportFragmentManager.beginTransaction()
                     .replace(R.id.mainContent, Card()).commit()
                 R.id.accountBottomMainMenu -> supportFragmentManager.beginTransaction()
