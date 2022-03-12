@@ -17,6 +17,16 @@ interface CardDao {
     @Query("SELECT * FROM card_data_table")
     fun loadCoffeeFromCard(): LiveData<List<CardModel>>
 
+//Отслеживание нужного товара в корзине по id
+    @Query("SELECT * FROM card_data_table WHERE card_idProduct = :idProduct")
+    fun loadCoffeeToCardFromCardProduct(idProduct: String): LiveData<List<CardModel>>
+
+    @Query("DELETE FROM card_data_table WHERE card_id = :idProductToCard")
+    fun deleteProductFromCard(idProductToCard:Int)
+//Удаление товара по id в другой базе данных
+    @Query("DELETE FROM card_data_table WHERE card_idProduct = :idProduct")
+    fun deleteProductFromCardProduct(idProduct:Int)
+
     @Query("DELETE FROM card_data_table")
     fun clear()
 }
