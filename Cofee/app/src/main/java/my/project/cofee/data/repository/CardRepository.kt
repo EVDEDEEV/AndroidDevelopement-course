@@ -12,8 +12,8 @@ import my.project.cofee.domain.repository.CoffeeCall
 class CardRepository(private val dao: CardDao) : CardCall {
 
 
-    override fun insert(cardModel: CardModel) {
-        return dao.insert(cardModel)
+    override suspend fun insert(cardModel: CardModel) {
+        dao.insert(cardModel)
     }
 
     override fun loadCoffeeFromCard(): LiveData<List<CardModel>> {
@@ -23,6 +23,11 @@ class CardRepository(private val dao: CardDao) : CardCall {
     override fun loadCoffeeToCardFromCardProduct(idProduct: String): LiveData<List<CardModel>> {
         return dao.loadCoffeeToCardFromCardProduct(idProduct)
     }
+
+    override suspend fun clear() {
+        dao.clear()
+    }
+
 
 
 }

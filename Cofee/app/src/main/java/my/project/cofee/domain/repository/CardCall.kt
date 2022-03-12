@@ -5,10 +5,13 @@ import my.project.cofee.data.models.CardModel
 
 interface CardCall {
 
-    fun insert(cardModel: CardModel)
+    suspend fun insert(cardModel: CardModel)
 
     fun loadCoffeeFromCard(): LiveData<List<CardModel>>
 
     fun loadCoffeeToCardFromCardProduct(idProduct: String): LiveData<List<CardModel>>
+
+    suspend fun clear()
+
 
 }
