@@ -14,8 +14,7 @@
         android:theme="@style/Theme.Cofee"
         android:usesCleartextTraffic="true">
 
-        <activity
-            android:name=".presentation.MainActivity"
+        <activity android:name=".presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
