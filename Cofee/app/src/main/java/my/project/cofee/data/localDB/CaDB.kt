@@ -6,6 +6,6 @@ import my.project.cofee.data.models.CardModel
 
 @Database(entities = [CardModel::class], version = 1)
 abstract class CaDB:RoomDatabase() {
-    abstract val cardDaoDao: CardDao
+    abstract val cardDao: CardDao
 
 }
