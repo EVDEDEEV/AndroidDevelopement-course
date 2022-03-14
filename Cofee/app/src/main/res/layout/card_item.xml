@@ -88,7 +88,7 @@
                 android:src="@drawable/delete"
                 android:padding="10dp"
                 android:layout_margin="5dp"
-                android:background="@drawable/backg_button"/>
+                />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/lessProductBasket"

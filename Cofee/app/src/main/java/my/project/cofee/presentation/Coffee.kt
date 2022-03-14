@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatImageButton
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -42,8 +43,13 @@ class Coffee : Fragment() {
         binding?.catalogCoffee?.layoutManager =
             LinearLayoutManager(context)
         coffeeAdapter =
-            CoffeeAdapter ({ coffeeModel: CoffeeModel -> addToCard(coffeeModel) },
-        {coffeeModel: CoffeeModel -> removeFromCard(coffeeModel)})
+            CoffeeAdapter({ coffeeModel: CoffeeModel -> addToCard(coffeeModel) },
+                { coffeeModel: CoffeeModel -> removeFromCard(coffeeModel) },
+                { idProduct: Int, addToCard: AppCompatImageButton, removeFromCard: AppCompatImageButton ->
+                    loadCoffeeToCardFromCardProduct(idProduct,
+                        addToCard,
+                        removeFromCard)
+                })
 
         binding?.catalogCoffee?.adapter = coffeeAdapter
 
@@ -60,7 +66,7 @@ class Coffee : Fragment() {
     }
 
     private fun addToCard(coffeeModel: CoffeeModel) {
-        cardViewModel?.startInsert(coffeeModel.name,
+        cardViewModel.startInsert(coffeeModel.name,
             coffeeModel.image,
             coffeeModel.price,
             coffeeModel.id.toString(),
@@ -69,6 +75,29 @@ class Coffee : Fragment() {
 
     private fun removeFromCard(coffeeModel: CoffeeModel) {
         cardViewModel.deleteProductToCardFromCardProduct(coffeeModel.id.toString())
+    }
+
+    //    Функция, которая будет отображать кнопку удаления или добавления товара в зависмости от входных параметров
+    private fun loadCoffeeToCardFromCardProduct(
+        idProduct: Int, addToCard: AppCompatImageButton,
+        removeFromCard: AppCompatImageButton,
+    ) {
+        cardViewModel.loadCoffeeToCardFromCardProduct(idProduct.toString())
+            .observe(viewLifecycleOwner, Observer {
+                val count = it.count()
+
+                if (count > 0) {
+                    addToCard.visibility = View.GONE
+                    removeFromCard.visibility = View.VISIBLE
+                } else {
+                    addToCard.visibility = View.VISIBLE
+                    removeFromCard.visibility = View.GONE
+
+                }
+
+            })
+
+
     }
 
 
