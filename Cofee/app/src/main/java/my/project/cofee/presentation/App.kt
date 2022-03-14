@@ -1,6 +1,7 @@
 package my.project.cofee.presentation
 
 import android.app.Application
+import my.project.cofee.presentation.di.card
 import my.project.cofee.presentation.di.coffee
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -17,7 +18,7 @@ class App : Application() {
             //inject Android context
             androidContext(this@App)
 
-            modules(coffee)
+            modules(coffee, card)
         }
     }
 }
