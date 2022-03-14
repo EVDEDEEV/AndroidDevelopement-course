@@ -42,7 +42,7 @@ class Coffee : Fragment() {
         binding?.catalogCoffee?.layoutManager =
             LinearLayoutManager(context)
         coffeeAdapter =
-            CoffeeAdapter()
+            CoffeeAdapter({coffeModel: CoffeeModel -> addToCard(coffeModel)})
         binding?.catalogCoffee?.adapter = coffeeAdapter
 
     }

@@ -1,15 +1,17 @@
 package my.project.cofee.presentation
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import my.project.cofee.R
+import my.project.cofee.data.models.CardModel
 import my.project.cofee.data.models.CoffeeModel
 import my.project.cofee.databinding.CoffeeItemBinding
 
-class CoffeeAdapter  ():
+class CoffeeAdapter  (private val addToCard: (CoffeeModel) -> Unit):
     RecyclerView.Adapter<CoffeeAdapter.CoffeeHolder>() {
 
     private val coffee = ArrayList<CoffeeModel>()
@@ -29,7 +31,7 @@ class CoffeeAdapter  ():
 
 
     override fun onBindViewHolder(holder: CoffeeHolder, position: Int) {
-        holder.bind(coffee[position])
+        holder.bind(coffee[position], addToCard)
 
     }
 
@@ -45,7 +47,7 @@ class CoffeeAdapter  ():
 
 
         fun bind(
-            coffeeModel: CoffeeModel
+            coffeeModel: CoffeeModel, addToCard: (CoffeeModel) -> Unit
         ) {
 
             val getImage = coffeeModel.image
@@ -53,6 +55,10 @@ class CoffeeAdapter  ():
             binding.nameCoffee.text = coffeeModel.name
             binding.descriptionCoffee.text = coffeeModel.description
             binding.priceCoffee.text = coffeeModel.price
+
+            binding?.addToCard?.setOnClickListener(View.OnClickListener {
+                addToCard(coffeeModel)
+            })
 
         }
 

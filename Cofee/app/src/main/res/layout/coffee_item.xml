@@ -65,7 +65,7 @@
 
 
             <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/addToBasket"
+                android:id="@+id/addToCard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
