@@ -11,7 +11,7 @@ class CardViewModel(private val cardUseCase: CardUseCase) : ViewModel() {
 
     fun startInsert(
         nameProduct: String, imageProduct: String, priceProduct: String,
-        idProduct: String, countProduct: String,
+        idProduct: String, countProduct: String
     ) {
         insert(CardModel(0, nameProduct, imageProduct, priceProduct, idProduct, countProduct))
 
