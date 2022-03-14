@@ -1,6 +1,7 @@
 package my.project.cofee.presentation
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +12,7 @@ import my.project.cofee.data.models.CoffeeModel
 import my.project.cofee.databinding.CardItemBinding
 import my.project.cofee.databinding.CoffeeItemBinding
 
-class CardAdapter  ():
+class CardAdapter  (private val deleteFromCard: (CardModel) -> Unit):
     RecyclerView.Adapter<CardAdapter.CardHolder>() {
 
     private val productsFromCard = ArrayList<CardModel>()
@@ -31,7 +32,7 @@ class CardAdapter  ():
 
 
     override fun onBindViewHolder(holder: CardHolder, position: Int) {
-        holder.bind(productsFromCard[position])
+        holder.bind(productsFromCard[position], deleteFromCard)
 
     }
 
@@ -47,7 +48,7 @@ class CardAdapter  ():
 
 
         fun bind(
-            cardModel: CardModel
+            cardModel: CardModel, deleteFromCard: (CardModel) -> Unit
         ) {
 
             val getImage = cardModel.image
@@ -55,6 +56,11 @@ class CardAdapter  ():
             binding.nameProductCard.text = cardModel.name
             binding.countProductBasket.text = cardModel.count
             binding.priceProductCard.text = cardModel.price
+
+            binding.removeFromCardProductCard?.setOnClickListener(View.OnClickListener {
+                deleteFromCard(cardModel)
+
+            })
 
         }
 
