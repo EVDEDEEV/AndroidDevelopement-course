@@ -26,7 +26,7 @@ interface CardDao {
 
     //Удаление товара по id в другой базе данных
     @Query("DELETE FROM card_data_table WHERE card_idProduct = :idProduct")
-    suspend fun deleteProductFromCardProduct(idProduct: Int)
+    suspend fun deleteProductToCardFromCardProduct(idProduct: String)
 
     @Query("DELETE FROM card_data_table")
     suspend fun clear()

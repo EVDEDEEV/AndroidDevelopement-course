@@ -73,7 +73,7 @@
                 android:src="@drawable/card"/>
 
             <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/removeFromBasket"
+                android:id="@+id/removeFromCard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"

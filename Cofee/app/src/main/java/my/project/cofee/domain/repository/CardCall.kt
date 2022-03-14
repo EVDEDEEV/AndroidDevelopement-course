@@ -11,6 +11,10 @@ interface CardCall {
 
     fun loadCoffeeToCardFromCardProduct(idProduct: String): LiveData<List<CardModel>>
 
+    suspend fun deleteProductFromCard(idProduct: Int)
+
+    suspend fun deleteProductToCardFromCardProduct(idProduct: String)
+
     suspend fun clear()
 
 

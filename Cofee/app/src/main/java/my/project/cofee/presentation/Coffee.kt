@@ -42,7 +42,9 @@ class Coffee : Fragment() {
         binding?.catalogCoffee?.layoutManager =
             LinearLayoutManager(context)
         coffeeAdapter =
-            CoffeeAdapter({coffeModel: CoffeeModel -> addToCard(coffeModel)})
+            CoffeeAdapter ({ coffeeModel: CoffeeModel -> addToCard(coffeeModel) },
+        {coffeeModel: CoffeeModel -> removeFromCard(coffeeModel)})
+
         binding?.catalogCoffee?.adapter = coffeeAdapter
 
     }
@@ -64,5 +66,10 @@ class Coffee : Fragment() {
             coffeeModel.id.toString(),
             "1")
     }
+
+    private fun removeFromCard(coffeeModel: CoffeeModel) {
+        cardViewModel.deleteProductToCardFromCardProduct(coffeeModel.id.toString())
+    }
+
 
 }

@@ -11,7 +11,7 @@ import my.project.cofee.data.models.CardModel
 import my.project.cofee.data.models.CoffeeModel
 import my.project.cofee.databinding.CoffeeItemBinding
 
-class CoffeeAdapter  (private val addToCard: (CoffeeModel) -> Unit):
+class CoffeeAdapter  (private val addToCard: (CoffeeModel) -> Unit, private val removeFromCard: (CoffeeModel) -> Unit):
     RecyclerView.Adapter<CoffeeAdapter.CoffeeHolder>() {
 
     private val coffee = ArrayList<CoffeeModel>()
@@ -31,7 +31,7 @@ class CoffeeAdapter  (private val addToCard: (CoffeeModel) -> Unit):
 
 
     override fun onBindViewHolder(holder: CoffeeHolder, position: Int) {
-        holder.bind(coffee[position], addToCard)
+        holder.bind(coffee[position], addToCard, removeFromCard)
 
     }
 
@@ -47,7 +47,8 @@ class CoffeeAdapter  (private val addToCard: (CoffeeModel) -> Unit):
 
 
         fun bind(
-            coffeeModel: CoffeeModel, addToCard: (CoffeeModel) -> Unit
+            coffeeModel: CoffeeModel, addToCard: (CoffeeModel) -> Unit,
+            removeFromCard: (CoffeeModel) -> Unit
         ) {
 
             val getImage = coffeeModel.image
@@ -58,6 +59,10 @@ class CoffeeAdapter  (private val addToCard: (CoffeeModel) -> Unit):
 
             binding?.addToCard?.setOnClickListener(View.OnClickListener {
                 addToCard(coffeeModel)
+            })
+
+            binding?.removeFromCard?.setOnClickListener(View.OnClickListener {
+                removeFromCard(coffeeModel)
             })
 
         }

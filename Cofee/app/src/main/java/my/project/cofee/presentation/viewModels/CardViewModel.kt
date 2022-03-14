@@ -29,6 +29,14 @@ class CardViewModel(private val cardUseCase: CardUseCase) : ViewModel() {
         return cardUseCase.loadCoffeeToCardFromCardProduct(idProduct)
     }
 
+    fun deleteProductFromCard(idProduct: Int) = viewModelScope.launch {
+        cardUseCase.deleteProductFromCard(idProduct)
+    }
+
+    fun deleteProductToCardFromCardProduct(idProduct: String) = viewModelScope.launch {
+        cardUseCase.deleteProductToCardFromCardProduct(idProduct)
+    }
+
 
     fun clearCard() = viewModelScope.launch {
         cardUseCase.clear()
