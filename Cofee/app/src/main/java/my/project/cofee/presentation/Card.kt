@@ -45,7 +45,13 @@ class Card : Fragment(), View.OnClickListener {
         binding?.listCard?.layoutManager =
             LinearLayoutManager(context)
         cardAdapter =
-            CardAdapter { cardModel: CardModel -> deleteFromCard(cardModel) }
+            CardAdapter({ cardModel: CardModel ->
+                deleteFromCard(cardModel)
+            }, { cardModel: CardModel ->
+                lessCount(cardModel)
+            }, { cardModel: CardModel ->
+                moreCount(cardModel)
+            })
         binding?.listCard?.adapter = cardAdapter
     }
 
@@ -71,12 +77,48 @@ class Card : Fragment(), View.OnClickListener {
         when (view.id) {
             R.id.clearCard -> cardViewModel.clearCard()
 
-            R.id.checkoutCard -> cardViewModel.ch
+            R.id.checkoutCard -> {
+
+            }
 
 
         }
 
 
+    }
+
+    private fun lessCount(cardModel: CardModel) {
+        var count: Int = cardModel.count.toInt()
+        count--
+
+        if (count < 1) {
+
+            cardViewModel.updateProductToCard(
+                CardModel(cardModel.id, cardModel.name,
+                    cardModel.image, cardModel.price, cardModel.idProduct, "1"))
+        } else {
+            cardViewModel.updateProductToCard(
+                CardModel(cardModel.id,
+                    cardModel.name,
+                    cardModel.image,
+                    cardModel.price,
+                    cardModel.idProduct,
+                    count.toString()))
+        }
+    }
+
+    private fun moreCount(cardModel: CardModel) {
+
+        var count: Int = cardModel.count.toInt()
+        count++
+
+        cardViewModel.updateProductToCard(
+            CardModel(cardModel.id,
+                cardModel.name,
+                cardModel.image,
+                cardModel.price,
+                cardModel.idProduct,
+                count.toString()))
     }
 }
 
