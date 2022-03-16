@@ -26,5 +26,8 @@ class CardModel(
     @ColumnInfo(name = "card_count")
     val count: String,
 
+    @ColumnInfo(name = "card_total_price")
+    val totalPrice: String
+
 
     )
