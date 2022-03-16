@@ -12,7 +12,9 @@ import my.project.cofee.data.models.CoffeeModel
 import my.project.cofee.databinding.CardItemBinding
 import my.project.cofee.databinding.CoffeeItemBinding
 
-class CardAdapter  (private val deleteFromCard: (CardModel) -> Unit):
+class CardAdapter  (private val deleteFromCard: (CardModel) -> Unit,
+                    private val moreCount: (CardModel) -> Unit,
+                    private val lessCount: (CardModel) -> Unit):
     RecyclerView.Adapter<CardAdapter.CardHolder>() {
 
     private val productsFromCard = ArrayList<CardModel>()
@@ -32,7 +34,7 @@ class CardAdapter  (private val deleteFromCard: (CardModel) -> Unit):
 
 
     override fun onBindViewHolder(holder: CardHolder, position: Int) {
-        holder.bind(productsFromCard[position], deleteFromCard)
+        holder.bind(productsFromCard[position], deleteFromCard, moreCount, lessCount)
 
     }
 
@@ -48,7 +50,10 @@ class CardAdapter  (private val deleteFromCard: (CardModel) -> Unit):
 
 
         fun bind(
-            cardModel: CardModel, deleteFromCard: (CardModel) -> Unit
+            cardModel: CardModel,
+            deleteFromCard: (CardModel) -> Unit,
+            moreCount: (CardModel) -> Unit,
+            lessCount: (CardModel) -> Unit
         ) {
 
             val getImage = cardModel.image
@@ -57,8 +62,18 @@ class CardAdapter  (private val deleteFromCard: (CardModel) -> Unit):
             binding.countProductBasket.text = cardModel.count
             binding.priceProductCard.text = cardModel.price
 
-            binding.removeFromCardProductCard?.setOnClickListener(View.OnClickListener {
+            binding.removeFromCardProductCard.setOnClickListener(View.OnClickListener {
                 deleteFromCard(cardModel)
+
+            })
+
+            binding.moreProductBasket.setOnClickListener(View.OnClickListener {
+                moreCount(cardModel)
+
+            })
+
+            binding.lessProductBasket.setOnClickListener(View.OnClickListener {
+                lessCount(cardModel)
 
             })
 
@@ -66,4 +81,4 @@ class CardAdapter  (private val deleteFromCard: (CardModel) -> Unit):
 
     }
 
-}
+    }
