@@ -61,6 +61,7 @@ class CardAdapter  (private val deleteFromCard: (CardModel) -> Unit,
             binding.nameProductCard.text = cardModel.name
             binding.countProductBasket.text = cardModel.count
             binding.priceProductCard.text = cardModel.price
+            binding.totalPriceProductCard.text = cardModel.totalPrice
 
             binding.removeFromCardProductCard.setOnClickListener(View.OnClickListener {
                 deleteFromCard(cardModel)
