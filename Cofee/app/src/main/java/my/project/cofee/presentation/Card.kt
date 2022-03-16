@@ -46,12 +46,16 @@ class Card : Fragment(), View.OnClickListener {
             LinearLayoutManager(context)
         cardAdapter =
             CardAdapter({ cardModel: CardModel ->
-                deleteFromCard(cardModel)
+                deleteFromCard(cardModel
+                )
             }, { cardModel: CardModel ->
-                lessCount(cardModel)
+                lessCount(cardModel
+                )
             }, { cardModel: CardModel ->
-                moreCount(cardModel)
+                moreCount(cardModel
+                )
             })
+
         binding?.listCard?.adapter = cardAdapter
     }
 
@@ -60,6 +64,10 @@ class Card : Fragment(), View.OnClickListener {
         cardViewModel.loadCoffeeFromCard.observe(viewLifecycleOwner, Observer {
             cardAdapter?.setList(it)
             cardAdapter?.notifyDataSetChanged()
+
+            val total: Int = it.sumOf<CardModel> { it.totalPrice.toInt() }
+
+            binding?.totalOrder?.text = total.toString()
         })
 
 
@@ -81,13 +89,12 @@ class Card : Fragment(), View.OnClickListener {
 
             }
 
-
         }
-
 
     }
 
     private fun lessCount(cardModel: CardModel) {
+
         var count: Int = cardModel.count.toInt()
         count--
 
@@ -95,15 +102,20 @@ class Card : Fragment(), View.OnClickListener {
 
             cardViewModel.updateProductToCard(
                 CardModel(cardModel.id, cardModel.name,
-                    cardModel.image, cardModel.price, cardModel.idProduct, "1"))
+                    cardModel.image, cardModel.price, cardModel.idProduct, "1",
+                    (cardModel.price.toInt() * 1).toString()))
+
         } else {
+
             cardViewModel.updateProductToCard(
                 CardModel(cardModel.id,
                     cardModel.name,
                     cardModel.image,
                     cardModel.price,
                     cardModel.idProduct,
-                    count.toString()))
+                    count.toString(),
+                    (cardModel.price.toInt() * count).toString())
+            )
         }
     }
 
@@ -118,7 +130,10 @@ class Card : Fragment(), View.OnClickListener {
                 cardModel.image,
                 cardModel.price,
                 cardModel.idProduct,
-                count.toString()))
+                count.toString(),
+                (cardModel.price.toInt() * count).toString())
+        )
+
     }
 }
 
