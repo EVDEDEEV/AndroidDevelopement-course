@@ -7,14 +7,19 @@ import my.project.cofee.data.dataSourceIMPL.CoffeeApiDataSourceIMPL
 import my.project.cofee.data.dataSourceIMPL.CoffeeDataSourceIMPL
 import my.project.cofee.data.localDB.CaDB
 import my.project.cofee.data.localDB.CofDB
+import my.project.cofee.data.localDB.OrDB
 import my.project.cofee.data.repository.CardRepository
 import my.project.cofee.data.repository.CoffeeRepository
+import my.project.cofee.data.repository.OrderLocalRepository
 import my.project.cofee.domain.repository.CardCall
 import my.project.cofee.domain.repository.CoffeeCall
+import my.project.cofee.domain.repository.OrderLocalCall
 import my.project.cofee.domain.useCase.CardUseCase
 import my.project.cofee.domain.useCase.CoffeeUseCase
+import my.project.cofee.domain.useCase.OrderLocalUseCase
 import my.project.cofee.presentation.viewModels.CardViewModel
 import my.project.cofee.presentation.viewModels.CoffeeViewModel
+import my.project.cofee.presentation.viewModels.OrderLocalViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.scope.get
@@ -64,6 +69,22 @@ val card = module{
     single { CardUseCase(get()) }
 
     viewModel { CardViewModel(get()) }
+
+}
+val order = module{
+
+    single {
+        Room.databaseBuilder(androidContext(), OrDB::class.java,
+            "orDB").build()
+    }
+
+    single { get<OrDB>().orderLocalDao }
+
+    single<OrderLocalCall> { OrderLocalRepository(get()) }
+
+    single { OrderLocalUseCase(get()) }
+
+    viewModel { OrderLocalViewModel(get()) }
 
 }
 
