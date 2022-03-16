@@ -20,6 +20,10 @@ class CardRepository(private val dao: CardDao) : CardCall {
         dao.insert(cardModel)
     }
 
+    override suspend fun updateProductToCard(cardModel: CardModel) {
+        dao.updateProductToCard(cardModel)
+    }
+
     override fun loadCoffeeFromCard(): LiveData<List<CardModel>> {
         return dao.loadCoffeeFromCard()
     }
