@@ -17,6 +17,10 @@ class CardViewModel(private val cardUseCase: CardUseCase) : ViewModel() {
 
     }
 
+    fun updateProductToCard(cardModel: CardModel) = viewModelScope.launch {
+        cardUseCase.updateProductToCard(cardModel)
+    }
+
 
     private fun insert(cardModel: CardModel) = viewModelScope.launch {
         cardUseCase.insert(cardModel)
