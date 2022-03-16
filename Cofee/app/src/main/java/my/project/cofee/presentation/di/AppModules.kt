@@ -5,7 +5,7 @@ import my.project.cofee.data.dataSource.CoffeeApiDataSource
 import my.project.cofee.data.dataSource.CoffeeDataSource
 import my.project.cofee.data.dataSourceIMPL.CoffeeApiDataSourceIMPL
 import my.project.cofee.data.dataSourceIMPL.CoffeeDataSourceIMPL
-import my.project.cofee.data.localDB.CaDB
+import my.project.cofee.data.localDB.CadDB
 import my.project.cofee.data.localDB.CofDB
 import my.project.cofee.data.localDB.OrDB
 import my.project.cofee.data.repository.CardRepository
@@ -22,10 +22,9 @@ import my.project.cofee.presentation.viewModels.CoffeeViewModel
 import my.project.cofee.presentation.viewModels.OrderLocalViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.core.scope.get
 import org.koin.dsl.module
 
-val coffee = module{
+val coffee = module {
 
     single {
         Room.databaseBuilder(androidContext(), CofDB::class.java,
@@ -47,7 +46,7 @@ val coffee = module{
         )
     }
 
-    single<CoffeeCall> { CoffeeRepository(get(),get()) }
+    single<CoffeeCall> { CoffeeRepository(get(), get()) }
 
     single { CoffeeUseCase(get()) }
 
@@ -55,14 +54,14 @@ val coffee = module{
 
 }
 
-val card = module{
+val card = module {
 
     single {
-        Room.databaseBuilder(androidContext(), CofDB::class.java,
-            "cofDB").build()
+        Room.databaseBuilder(androidContext(), CadDB::class.java,
+            "cadDB").build()
     }
 
-    single { get<CaDB>().cardDao }
+    single { get<CadDB>().cardDao }
 
     single<CardCall> { CardRepository(get()) }
 
@@ -71,7 +70,8 @@ val card = module{
     viewModel { CardViewModel(get()) }
 
 }
-val order = module{
+
+val order = module {
 
     single {
         Room.databaseBuilder(androidContext(), OrDB::class.java,
