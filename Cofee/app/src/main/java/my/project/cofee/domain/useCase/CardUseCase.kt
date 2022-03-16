@@ -16,6 +16,12 @@ class CardUseCase(private val cardCall: CardCall) {
         cardCall.insert(cardModel)
     }
 
+    suspend fun updateProductToCard(cardModel: CardModel) {
+        CoroutineScope(Dispatchers.IO).launch {
+            cardCall.updateProductToCard(cardModel)
+        }
+    }
+
     fun loadCoffeeFromCard(): LiveData<List<CardModel>> {
         return cardCall.loadCoffeeFromCard()
     }
