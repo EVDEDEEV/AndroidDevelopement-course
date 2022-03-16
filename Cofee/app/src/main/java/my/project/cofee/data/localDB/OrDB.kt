@@ -7,5 +7,5 @@ import my.project.cofee.data.models.OrderLocalModel
 
 @Database(entities = [OrderLocalModel::class], version = 1)
 abstract class OrDB:RoomDatabase() {
-    abstract val cardDao: CardDao
+    abstract val orderLocalDao: OrderLocalDao
 }
