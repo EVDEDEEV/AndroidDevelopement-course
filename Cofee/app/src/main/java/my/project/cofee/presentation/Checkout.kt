@@ -5,18 +5,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import my.project.cofee.R
+import my.project.cofee.databinding.CheckoutBinding
 
+private var binding: CheckoutBinding? = null
 
 class Checkout : BottomSheetDialogFragment() {
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.checkout, container, false)
+
+
+        binding = DataBindingUtil.inflate(inflater, R.layout.checkout, container, false)
+
+        return binding?.root
     }
 
 }
