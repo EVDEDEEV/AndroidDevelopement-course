@@ -14,4 +14,7 @@ interface OrderLocalDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(orderLocalModel: OrderLocalModel)
 
+    @Query("SELECT * FROM order_local_data_table")
+    fun loadOrder(): LiveData<List<OrderLocalModel>>
+
 }
